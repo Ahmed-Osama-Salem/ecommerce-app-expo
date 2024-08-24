@@ -10,4 +10,7 @@ declare module "react-native" {
     className?: string;
   }
   // Add other components if needed
+  interface TouchableOpacityProps {
+    className?: string;
+  }
 }

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import categoriesReducer from "./slices/categoriesSlice";
+import productsReducer from "./slices/productSlice";
 
 import thunk from "redux-thunk";
 
@@ -31,6 +32,8 @@ const middleware = [thunk]; // Add other middleware here if needed
 const store = configureStore({
   reducer: {
     root: persistedReducer,
+    categories: categoriesReducer,
+    products: productsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

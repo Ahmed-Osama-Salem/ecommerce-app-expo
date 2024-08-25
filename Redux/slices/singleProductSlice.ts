@@ -14,7 +14,19 @@ interface Product {
   image: string;
 }
 
-export const fetchSingleProduct = createAsyncThunk<
+interface SingleProductState {
+  product: Product | null;
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+}
+
+const initialState: SingleProductState = {
+  product: null,
+  status: "idle",
+  error: null,
+};
+
+export const fetchSingleProduct: any = createAsyncThunk<
   Product,
   FetchSingleProductPayload,
   { dispatch: AppDispatch }
@@ -32,7 +44,7 @@ export const fetchSingleProduct = createAsyncThunk<
 
 const singleProductSlice = createSlice({
   name: "singleProduct",
-  initialState: { product: {}, status: "idle", error: null },
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -45,7 +57,7 @@ const singleProductSlice = createSlice({
       })
       .addCase(fetchSingleProduct.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.payload as string;
+        state.error = (action.error.message as string) || null;
       });
   },
 });

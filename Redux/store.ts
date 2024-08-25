@@ -4,6 +4,7 @@ import categoriesReducer from "./slices/categoriesSlice";
 import productsReducer from "./slices/productSlice";
 import singleProductReducer from "./slices/singleProductSlice";
 import cartReducer from "./slices/cart/addToCartSlice";
+import cartSlice from "./slices/cart/cartSlice";
 
 import thunk from "redux-thunk";
 
@@ -38,6 +39,7 @@ const store = configureStore({
     products: productsReducer,
     singleProduct: singleProductReducer,
     cart: cartReducer,
+    cartList: cartSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,3 +1,4 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export interface CartProduct {
   productId: number;
   quantity: number;
@@ -10,18 +11,12 @@ export interface Cart {
 }
 
 export interface AddToCartResponse {
-  // Define the response structure here
   id: number;
   userId: number;
   date: string;
   products: CartProduct[];
 }
 
-// cartSlice.ts
-
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-// Define initial state
 const initialState: {
   cart: Cart | null;
   status: "idle" | "loading" | "failed";
@@ -32,7 +27,6 @@ const initialState: {
   error: null,
 };
 
-// Define thunk
 export const addToCart = createAsyncThunk<AddToCartResponse, Cart>(
   "cart/addToCart",
   async (cart: Cart) => {

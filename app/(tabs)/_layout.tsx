@@ -1,9 +1,6 @@
 import { Tabs } from "expo-router";
 import React from "react";
-
 import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import Header from "@/components/Header/Header";
-import { SafeAreaView } from "react-native";
 
 export default function TabLayout() {
   return (

@@ -1,11 +1,4 @@
-import {
-  SafeAreaView,
-  Image,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { Image, Text, View, TouchableOpacity, ScrollView } from "react-native";
 import React, { useEffect } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { RootState, store } from "@/Redux/store";
@@ -16,6 +9,7 @@ import ProductHeader from "@/components/SingleProduct/ProductHeader";
 import ProductDetails from "@/components/SingleProduct/ProductDetails";
 import { ProductResponse } from "@/Redux/slices/productSlice";
 import Toast from "react-native-toast-message";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Product = () => {
   const { id } = useLocalSearchParams();

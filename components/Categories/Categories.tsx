@@ -4,6 +4,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
 } from "react-native";
 import React, { useEffect } from "react";
 import { ArrowIcon } from "@/components/navigation/TabBarIcon";
@@ -24,7 +25,14 @@ const Categories = () => {
   const renderItem = ({ item }: { item: CategoryResponse }) => {
     return (
       <View className="items-center justify-center gap-3">
-        <View className="bg-gray-200 h-20 w-20 rounded-full"></View>
+        <View className="bg-gray-200 h-20 w-20 rounded-full items-center justify-center">
+          <Image
+            source={{
+              uri: "https://img.freepik.com/free-psd/laptop-mock-up_1310-197.jpg?w=2000&t=st=1724589471~exp=1724590071~hmac=d65c9f3ef07411ed63be09ec8acc9ff219c03fc5939c7a5ef9129a878d266c90",
+            }}
+            style={{ height: 30, width: 30 }}
+          />
+        </View>
         <Text className="text-black font-semibold text-center">
           {item.length > 11 ? item.slice(0, 11) + "..." : item}
         </Text>

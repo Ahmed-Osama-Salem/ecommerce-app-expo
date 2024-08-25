@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 
 const Products = () => {
   const { products } = useSelector((state: RootState) => state.products);
-  console.log(products);
 
   useEffect(() => {
     store.dispatch(fetchProducts()).unwrap();

@@ -19,7 +19,7 @@ const Header = () => {
           />
         </TouchableOpacity>
         <View>
-          <Text className="text-3xl font-bold">Store</Text>
+          <Text className="text-3xl font-bold">Test Store</Text>
         </View>
         <TouchableOpacity className="bg-gray-100 h-12 w-12 rounded-full justify-center items-center">
           <Ionicons
@@ -42,7 +42,7 @@ const Header = () => {
         <TextInput className={`text-center`} placeholder="Search..." />
       </View>
       <LinearGradient
-        colors={["#f9fafb", "transparent"]}
+        colors={["#f9fafb", "#e2e8f0", "#f9fafb"]}
         start={{ x: 1, y: 0 }}
         end={{ x: 0, y: 0 }}
         className="p-2 mt-3 rounded-xl h-[55px] flex flex-row items-center w-full justify-center"
